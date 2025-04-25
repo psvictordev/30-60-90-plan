@@ -79,12 +79,6 @@ This project implements a structured 90-day plan for new developers, divided int
 ```bash
 # Clone the repository
 git clone [REPOSITORY_URL]
-
-# Install dependencies
-npm install
-
-# Start the project
-npm start
 ```
 
 ## 🎯 How to Use
