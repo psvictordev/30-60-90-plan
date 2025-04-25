@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>90-Day Developer Plan Visualization</title>
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e40af;
+        --accent-color: #3b82f6;
+        --text-color: #1f2937;
+        --background-color: #f8fafc;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        padding: 2rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .header h1 {
+        color: var(--primary-color);
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .github-link {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+      }
+
+      .github-link:hover {
+        background-color: var(--secondary-color);
+      }
+
+      .github-link i {
+        margin-right: 0.5rem;
+      }
+
+      .timeline {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        height: 6px;
+        background-color: var(--accent-color);
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        border-radius: 3px;
+      }
+
+      .phase {
+        position: relative;
+        width: 30%;
+        z-index: 1;
+      }
+
+      .phase-content {
+        padding: 1.5rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+        text-align: center;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .phase-content::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .phase-title {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .phase-days {
+        font-weight: bold;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .phase-list {
+        list-style-type: none;
+        text-align: left;
+        flex-grow: 1;
+      }
+
+      .phase-list li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+        font-size: 0.9rem;
+      }
+
+      .phase-list li::before {
+        content: "•";
+        color: var(--accent-color);
+        position: absolute;
+        left: 0;
+      }
+
+      @media (max-width: 768px) {
+        .timeline {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .timeline::before {
+          width: 6px;
+          height: 100%;
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%);
+        }
+
+        .phase {
+          width: 100%;
+          margin-bottom: 2rem;
+        }
+
+        .phase-content {
+          min-height: auto;
+        }
+
+        .phase-content::after {
+          top: -10px;
+          bottom: auto;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>90-Day Developer Plan</h1>
+        <p>A structured approach to developer onboarding and growth</p>
+        <a
+          href="https://github.com/psvictordev/30-60-90-plan"
+          class="github-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </div>
+
+      <div class="timeline">
+        <div class="phase">
+          <div class="phase-content">
+            <h2 class="phase-title">Integration and Learning</h2>
+            <div class="phase-days">Days 1-30</div>
+            <ul class="phase-list">
+              <li>Set up development environment</li>
+              <li>Learn team workflow and tools</li>
+              <li>Study company tech stack</li>
+              <li>Review project documentation</li>
+              <li>Participate in training</li>
+              <li>Shadow code reviews</li>
+              <li>Work on small tasks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase">
+          <div class="phase-content">
+            <h2 class="phase-title">Skills Development</h2>
+            <div class="phase-days">Days 31-60</div>
+            <ul class="phase-list">
+              <li>Contribute to small features</li>
+              <li>Participate in code reviews</li>
+              <li>Master version control</li>
+              <li>Engage in pair programming</li>
+              <li>Attend team meetings</li>
+              <li>Learn testing frameworks</li>
+              <li>Deepen product understanding</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="phase">
+          <div class="phase-content">
+            <h2 class="phase-title">Autonomy and Efficiency</h2>
+            <div class="phase-days">Days 61-90</div>
+            <ul class="phase-list">
+              <li>Take ownership of tasks</li>
+              <li>Work with complex codebases</li>
+              <li>Participate in refactoring</li>
+              <li>Create documentation</li>
+              <li>Acquire new skills</li>
+              <li>Communicate with stakeholders</li>
+              <li>Set long-term goals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
